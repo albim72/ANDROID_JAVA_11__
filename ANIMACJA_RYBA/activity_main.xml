@@ -27,35 +27,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Obrót" />
+                android:text="Obrót"
+                android:onClick="obracaj"/>
 
             <Button
                 android:id="@+id/btnSkala"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Skala" />
+                android:text="Skala"
+                android:onClick="skaluj"/>
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Zanik" />
+                android:text="Zanik"
+                android:onClick="zanikaj"/>
 
             <Button
                 android:id="@+id/btnPrzesuw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Przesuw" />
+                android:text="Przesuw"
+                android:onClick="przesuwaj"/>
         </LinearLayout>
 
         <Button
             android:id="@+id/btnWszystko"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WSZYSTKO" />
+            android:text="WSZYSTKO"
+            android:onClick="stosuj_wszystko"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
