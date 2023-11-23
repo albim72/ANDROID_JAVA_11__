@@ -12,10 +12,11 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnEfekt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="narzuć efekt" />
+            android:text="narzuć efekt"
+            android:onClick="kliknieto_start"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
