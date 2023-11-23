@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         Bitmap temp = BitmapFactory.decodeResource(getResources(),R.drawable.gory);
 
         bmp = temp.copy(Bitmap.Config.ARGB_8888,true);
+        stan.setVisibility(ProgressBar.INVISIBLE);
+
     }
 
     public void kliknieto_start(View v){
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void unused) {
             super.onPostExecute(unused);
-            
+
             obraz.setImageBitmap(bmp);
             przycisk.setEnabled(true);
             napis.setText("koniec przetwarzania obrazu...");
