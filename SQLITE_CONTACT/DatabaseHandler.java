@@ -65,7 +65,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         return null;
     }
-    
+
     public List<Contact> getAllContacts() {
         List<Contact> contactList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_NAME + ";";
@@ -83,5 +83,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             while (cursor.moveToNext());
         }
         return contactList;
+    }
+    
+    public int updateContact(Contact contact){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME,contact.getName());
+        values.put(KEY_PH_NO,contact.getPhone());
+        
+        return db.update(TABLE_NAME,values,KEY_ID + "=",new String[]{String.valueOf(contact.getId())});
+
+    }
+    
+    public void deleteContact(Contact contact){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,KEY_ID+"=",new String[]{String.valueOf(contact.getId())});
+        db.close();
+    }
+    
+    public int getContactsCount(){
+        String countQuery = "SELECT * FROM " + TABLE_NAME + ";";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery,null);
+        cursor.close();
+        return cursor.getCount();
     }
 }
